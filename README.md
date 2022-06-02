@@ -121,7 +121,7 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
----> The name of the console script is _dependency_.
+---> I have packaged the CLI tool. The name of the console script is _dependency_. So that it can run directly from the keyword _dependency_. It will invoke the main method of the main module in the dyteproject package.
 For help, run the below command:
   ```sh
   dependency -h
