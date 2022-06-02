@@ -98,7 +98,8 @@ To run this tool on your system locally, follow the installation steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Make sure you upgrade `pip` before moving on.
+All the required dependencies are in [`requirements.txt`](https://github.com/dyte-submissions/dyte-vit-2022-PS1607/blob/main/requirements.txt) which would be installed at the time of running the setup.
   ```sh
   pip install --upgrade pip
   ```
