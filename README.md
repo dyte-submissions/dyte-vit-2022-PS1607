@@ -18,11 +18,7 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -30,23 +26,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/dyte-submissions/dyte-vit-2022-PS1607">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Dyte Project</h3>
 
   <p align="center">
-    project_description
+    A command line tool to manage dependency versions.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/dyte-submissions/dyte-vit-2022-PS1607"><strong>Explore the docs » (Currently NA)</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/dyte-submissions/dyte-vit-2022-PS1607">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/dyte-submissions/dyte-vit-2022-PS1607/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/dyte-submissions/dyte-vit-2022-PS1607/issues">Request Feature</a>
   </p>
 </div>
 
@@ -71,10 +67,8 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -83,9 +77,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+Submission for Dyte Internship shortlisting. Works on macOS/Linux.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -93,14 +85,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [Python](https://www.python.org/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -109,31 +94,25 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To run this tool on your system locally, follow the installation steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+Make sure you upgrade `pip` before moving on.
+All the required dependencies are in [`requirements.txt`](https://github.com/dyte-submissions/dyte-vit-2022-PS1607/blob/main/requirements.txt) which would be installed at the time of running the setup.
   ```sh
-  npm install npm@latest -g
+  pip install --upgrade pip
   ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Download the repository as zip. Unzip.
+2. Put your GitHub Access Token in [github_token.py](https://github.com/dyte-submissions/dyte-vit-2022-PS1607/blob/main/src/dyteproject/github_token.py) in the variable _token_
+3. cd to the repository folder
+4. Run this command
+
    ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+   python3 setup.py install
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -143,9 +122,31 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+---> I have packaged the CLI tool. The name of the console script is _dependency_. So that it can run directly from the keyword _dependency_. It will invoke the main method of the main module in the dyteproject package.
+For help, run the below command:
+  ```sh
+  dependency -h
+  ```
+<br>---> The command _-i_ expects 3 Arguments;  PATH_TO_INPUT_CSV_FILE,  DEPENDENCY_NAME,  DEPENDENCY_VERSION<br>
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+
+Usage example#1
+  ```sh
+  dependency -i /Users/prakhar/downloads/input.csv axios 0.23.0
+  ```
+Usage example#2
+  ```sh
+  dependency -i /Users/prakhar/downloads/input.csv eslint 7.32.0
+  ```
+<br>
+---> The tool returns the list in the format as shown below
+<img width="749" alt="image" src="https://user-images.githubusercontent.com/77260373/171464381-f234049e-ae58-4de2-80eb-c665347f6564.png">
+
+---> The same is stored in the CSV file used for input
+
+  
+
+_For more examples, please refer to the [Documentation](https://doesnotexist.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -154,39 +155,14 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+- [ ] Integrate -update feature. (Unable to complete because of time limit)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See [`LICENSE.txt`](https://github.com/dyte-submissions/dyte-vit-2022-PS1607/blob/main/LICENSE.txt) for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -195,37 +171,29 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - [@prakhar16072002](https://twitter.com/prakhar16072002) - prakharsharma1607@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+LinkedIn - [https://www.linkedin.com/in/prakhar-sharma-2020/](https://www.linkedin.com/in/prakhar-sharma-2020/)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+Github Link: [https://github.com/PS1607](https://github.com/PS1607)
 
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
+Google Developer: [https://g.dev/ps1607](https://g.dev/ps1607)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/dyte-submissions/dyte-vit-2022-PS1607.svg?style=for-the-badge
+[contributors-url]: https://github.com/dyte-submissions/dyte-vit-2022-PS1607/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/dyte-submissions/dyte-vit-2022-PS1607.svg?style=for-the-badge
+[forks-url]: https://github.com/dyte-submissions/dyte-vit-2022-PS1607/network/members
+[stars-shield]: https://img.shields.io/github/stars/dyte-submissions/dyte-vit-2022-PS1607.svg?style=for-the-badge
+[stars-url]: https://github.com/dyte-submissions/dyte-vit-2022-PS1607/stargazers
+[issues-shield]: https://img.shields.io/github/issues/dyte-submissions/dyte-vit-2022-PS1607.svg?style=for-the-badge
+[issues-url]: https://github.com/dyte-submissions/dyte-vit-2022-PS1607/issues
+[license-shield]: https://img.shields.io/github/license/dyte-submissions/dyte-vit-2022-PS1607.svg?style=for-the-badge
+[license-url]: https://github.com/dyte-submissions/dyte-vit-2022-PS1607/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://www.linkedin.com/in/prakhar-sharma-2020/
 [product-screenshot]: images/screenshot.png
